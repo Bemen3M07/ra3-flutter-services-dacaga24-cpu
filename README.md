@@ -51,6 +51,36 @@ GET https://car-data.p.rapidapi.com/cars?limit=10&page=0
 
 ---
 
-## Exercici 2 — (pendent)
+## Exercici 2 — Integrar vista i model (Cars UI)
+
+### Descripció
+Aplicació Flutter que mostra la llista de cotxes de l'API utilitzant
+el patró **MVC** amb **Provider** per gestionar l'estat.
+
+### Tecnologies utilitzades
+- `provider` package per gestió d'estat
+- `Consumer` widget per escoltar canvis del Provider
+- `ListView.builder` per mostrar la llista
+
+### Estructura de fitxers
+```
+lib/
+  ex2_cars_ui/
+    provider/cars_provider.dart  → Gestió d'estat amb ChangeNotifier
+    view/cars_list_view.dart     → Vista amb ListView
+```
+
+### Funcionament
+1. En iniciar la vista, el `CarsProvider` crida automàticament `fetchCars()`
+2. Mentre carrega, es mostra un `CircularProgressIndicator`
+3. Un cop carregats, es mostra la llista amb `make`, `model`, `type` i `year`
+4. En cas d'error, es mostra un missatge en vermell
+
+### Patró utilitzat
+- **Model** → `CarsModel` (ex1_cars/model)
+- **Vista** → `CarsListView`
+- **Controlador** → `CarsProvider`
+
+
 ## Exercici 3 — (pendent)
 ## Exercici 4 — (pendent)
