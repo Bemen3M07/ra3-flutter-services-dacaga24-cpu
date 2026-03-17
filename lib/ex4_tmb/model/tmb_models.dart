@@ -1,6 +1,5 @@
 import 'dart:convert';
 
-// Model per a una línia de bus
 class BusLinia {
   final int idLinia;
   final int codiLinia;
@@ -34,7 +33,6 @@ List<BusLinia> busLiniesFromJson(String str) {
   return features.map((f) => BusLinia.fromJson(f)).toList();
 }
 
-// Model per a una parada de bus
 class BusParada {
   final int idParada;
   final int codiParada;
@@ -68,7 +66,6 @@ List<BusParada> busParadesFromJson(String str) {
   return features.map((f) => BusParada.fromJson(f)).toList();
 }
 
-// Model per a un autobús que passa per una parada (iBus)
 class IBusArrival {
   final String line;
   final String destination;
