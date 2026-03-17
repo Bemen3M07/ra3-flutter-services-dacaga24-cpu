@@ -87,5 +87,38 @@ lib/
 - Icona de cotxe per cada element de la llista
 - Colors corporatius amb blau fosc `#1A237E`
 
-## Exercici 3 — (pendent)
+## Exercici 3 — Acudits (Jokes API)
+
+### Descripció
+Aplicació que mostra acudits aleatoris de l'API
+[Good Jokes](https://api.sampleapis.com/jokes/goodJokes).
+Cada vegada que es prem el botó es crida l'API i es mostra un nou acudit.
+
+### Tecnologies utilitzades
+- `http` package per les crides REST
+- `provider` package per gestió d'estat
+- `BottomNavigationBar` per navegar entre exercises
+
+### Estructura de fitxers
+```
+lib/
+  ex3_jokes/
+    model/joke_model.dart        → Classe JokeModel
+    service/joke_service.dart    → getJokes() i getRandomJoke()
+    provider/joke_provider.dart  → JokeProvider amb fetchRandomJoke()
+    view/joke_view.dart          → Vista amb botó i targeta d'acudit
+test/
+  ex3_jokes_test.dart            → Tests del servei
+```
+
+### Patró utilitzat
+- **Model** → `JokeModel`
+- **Vista** → `JokeView`
+- **Controlador** → `JokeProvider`
+
+### Endpoint
+```
+GET https://api.sampleapis.com/jokes/goodJokes
+```
+
 ## Exercici 4 — (pendent)
