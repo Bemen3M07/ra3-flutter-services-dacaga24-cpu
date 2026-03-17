@@ -81,6 +81,11 @@ lib/
 - **Vista** → `CarsListView`
 - **Controlador** → `CarsProvider`
 
+### Millores de disseny
+- Cards amb `elevation` i cantonades arrodonides
+- Badge de color per cada tipus de cotxe (SUV, Sedan, Convertible...)
+- Icona de cotxe per cada element de la llista
+- Colors corporatius amb blau fosc `#1A237E`
 
 ## Exercici 3 — (pendent)
 ## Exercici 4 — (pendent)
