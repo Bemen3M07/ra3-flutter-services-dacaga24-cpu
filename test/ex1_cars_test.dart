@@ -7,14 +7,11 @@ void main() {
       final carHttpService = CarHttpService();
       final cars = await carHttpService.getCars();
 
-      // Comprovem que hem rebut 10 cotxes
       expect(cars.length, 10);
 
-      // Comprovem que el primer i l'últim tenen els ids esperats
       expect(cars[0].id, 9582);
       expect(cars[9].id, 9591);
 
-      // Comprovem que els camps no estan buits
       expect(cars[0].make, isNotEmpty);
       expect(cars[0].model, isNotEmpty);
       expect(cars[0].type, isNotEmpty);
