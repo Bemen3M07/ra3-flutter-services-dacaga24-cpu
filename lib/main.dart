@@ -4,6 +4,8 @@ import 'ex2_cars_ui/provider/cars_provider.dart';
 import 'ex2_cars_ui/view/cars_list_view.dart';
 import 'ex3_jokes/provider/joke_provider.dart';
 import 'ex3_jokes/view/joke_view.dart';
+import 'ex4_tmb/provider/tmb_provider.dart';
+import 'ex4_tmb/view/tmb_view.dart';
 
 void main() {
   runApp(const MyApp());
@@ -18,6 +20,7 @@ class MyApp extends StatelessWidget {
       providers: [
         ChangeNotifierProvider(create: (_) => CarsProvider()),
         ChangeNotifierProvider(create: (_) => JokeProvider()),
+        ChangeNotifierProvider(create: (_) => TmbProvider()),
       ],
       child: MaterialApp(
         title: 'APIs i Serveis',
@@ -45,6 +48,7 @@ class _MainNavigatorState extends State<MainNavigator> {
   final List<Widget> _pages = const [
     CarsListView(),
     JokeView(),
+    TmbView(),
   ];
 
   @override
@@ -62,6 +66,10 @@ class _MainNavigatorState extends State<MainNavigator> {
           BottomNavigationBarItem(
             icon: Icon(Icons.emoji_emotions),
             label: 'Jokes',
+          ),
+          BottomNavigationBarItem(
+            icon: Icon(Icons.directions_bus),
+            label: 'TMB',
           ),
         ],
       ),
