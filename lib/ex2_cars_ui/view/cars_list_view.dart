@@ -14,6 +14,7 @@ class _CarsListViewState extends State<CarsListView> {
   @override
   void initState() {
     super.initState();
+    // ignore: use_build_context_synchronously
     Future.microtask(() => context.read<CarsProvider>().fetchCars());
   }
 
@@ -113,6 +114,7 @@ class _CarCard extends StatelessWidget {
               width: 60,
               height: 60,
               decoration: BoxDecoration(
+                // ignore: deprecated_member_use
                 color: const Color(0xFF1A237E).withOpacity(0.1),
                 borderRadius: BorderRadius.circular(12),
               ),
@@ -150,6 +152,7 @@ class _CarCard extends StatelessWidget {
             Container(
               padding: const EdgeInsets.symmetric(horizontal: 10, vertical: 4),
               decoration: BoxDecoration(
+                // ignore: deprecated_member_use
                 color: _typeColor(car.type).withOpacity(0.15),
                 borderRadius: BorderRadius.circular(20),
                 border: Border.all(color: _typeColor(car.type)),
