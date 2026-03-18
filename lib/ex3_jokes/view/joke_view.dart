@@ -14,6 +14,7 @@ class _JokeViewState extends State<JokeView> {
   void initState() {
     super.initState();
 
+    // ignore: use_build_context_synchronously
     Future.microtask(() => context.read<JokeProvider>().fetchRandomJoke());
   }
 
@@ -95,6 +96,7 @@ class _JokeViewState extends State<JokeView> {
                                             horizontal: 12, vertical: 4),
                                         decoration: BoxDecoration(
                                           color: const Color(0xFFFBC02D)
+                                              // ignore: deprecated_member_use
                                               .withOpacity(0.2),
                                           borderRadius:
                                               BorderRadius.circular(20),
