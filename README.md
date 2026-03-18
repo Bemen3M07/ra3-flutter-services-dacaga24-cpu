@@ -1,6 +1,6 @@
 # P5d: APIs i serveis — Flutter
 **Mòdul:** M08 - Programació multimèdia i dispositius mòbils
-**Alumne:** Daniel
+**Alumne:** Daniel Caravaca Garcia
 **Repositori:** ra3-flutter-services-dacaga24-cpu
 
 ---
@@ -121,4 +121,54 @@ test/
 GET https://api.sampleapis.com/jokes/goodJokes
 ```
 
-## Exercici 4 — (pendent)
+## Exercici 4 — TMB Barcelona
+
+### Descripció
+Aplicació que connecta amb l'API de [TMB](https://developer.tmb.cat/)
+per consultar línies de bus, parades i horaris en temps real.
+
+### Tecnologies utilitzades
+- API de TMB (developer.tmb.cat)
+- `http` package per les crides REST
+- `provider` package per gestió d'estat
+- `TabBar` i `TabBarView` per navegar entre seccions
+
+## Exercici 4 — TMB Barcelona
+
+### Descripció
+Aplicació que connecta amb l'API de [TMB](https://developer.tmb.cat/)
+per consultar línies de bus, parades i horaris en temps real.
+
+### Tecnologies utilitzades
+- API de TMB (developer.tmb.cat)
+- `http` package per les crides REST
+- `provider` package per gestió d'estat
+- `TabBar` i `TabBarView` per navegar entre seccions
+
+### Estructura de fitxers
+```
+lib/
+  ex4_tmb/
+    model/tmb_models.dart     → BusLinia, BusParada, IBusArrival
+    service/tmb_service.dart  → getLinies(), getParades(), getArrivals()
+    provider/tmb_provider.dart → TmbProvider amb 3 estats
+    view/tmb_view.dart         → Vista amb 3 tabs
+```
+
+### Endpoints utilitzats
+```
+GET https://api.tmb.cat/v1/transit/linies/bus        → Totes les línies
+GET https://api.tmb.cat/v1/transit/parades           → Totes les parades
+GET https://api.tmb.cat/v1/ibus/stops/{id}           → Horaris per parada
+```
+
+### Funcionament
+1. **Tab Línies**: Llista totes les línies de bus amb nom, descripció i color
+2. **Tab Parades**: Llista totes les parades amb adreça i districte
+3. **Tab Horaris**: Introdueix un codi de parada (ex: 1265) i veus
+   els autobusos que han de passar amb el temps d'espera en temps real
+
+### Patró utilitzat
+- **Model** → `BusLinia`, `BusParada`, `IBusArrival`
+- **Vista** → `TmbView`
+- **Controlador** → `TmbProvider`
